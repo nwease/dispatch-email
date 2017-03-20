@@ -3,7 +3,6 @@ var router = express.Router();
 var helper = require('sendgrid').mail;
 
 router.get('/:action', function(req, res, next) {
-
 	var action = req.params.action
 
 	if (action == 'send'){ // Send an email
@@ -33,8 +32,7 @@ router.get('/:action', function(req, res, next) {
         	res.json({
         		confirmation: 'success',
         		response: response
-        	})
-            
+        	})  
         })
 
 		return
@@ -44,7 +42,6 @@ router.get('/:action', function(req, res, next) {
   	    confirmation: 'fail',
   	    message: 'Invalid Action'
   })
-
 })
 
 module.exports = router;
